@@ -1,0 +1,64 @@
+Para ejecutar el programa ha de seguir los siguientes pasos:
+	.1 Arrancar la consola de Linux y situarse en el directorio del proyecto
+		'Energy Optimization ProJect'
+	.2 Escribir la siguiente orden en la consola que representa el uso del
+		programa 
+			./Source\ Code/enrgopt [ fichero de configuración ]
+	.3 Los ficheros de configuración se situan en la carpeta 'Config files'
+	.4 Para probar su propia configuración hay que seguir el protocolo de un
+		fichero de configuración de ejemplo PRESTANDO ATECIÓN a los comentarios
+	.5 Un ejemplo de ejecución del programa con su respectiva salida sería
+		
+		La orden:
+
+			> ./Source\ Code/enrgopt Config\ Files/config.txt
+
+		La salida:
+
+					Datos leidos desde Config Files/config.txt :
+			Numero de cores = 5
+			Potencia en watios base procesador = 10.000 W
+			Potencia en watios core inactivo = 3.000 W
+			Constante de C por core = 1.070 nF
+
+				Frecuencias(GHz)	Voltajes(V)
+			P0 	 2.110 			 0.980
+			P1 	 2.340 			 1.012
+			P2 	 3.340 			 1.230
+
+			Duracion en segundos aplicacion secuencial = 123 s
+			Indice de paralelizacion = 4 hebras
+
+				Division de trabajo entre hebras: 
+			Hebra 0 - 4.00%
+			Hebra 1 - 60.00%
+			Hebra 2 - 28.00%
+			Hebra 3 - 8.00%
+
+			Tiempos dedicados a las tareas:
+			Hebra 0 4.92 s
+			Hebra 1 73.80 s
+			Hebra 2 34.44 s
+			Hebra 3 9.84 s
+
+			Con ajuste: 
+			Core 0 P2
+			Core 1 P2
+			Core 2 P2
+			Core 3 P2
+			el consumo de energia sin optimizacion es de 0.595 Wh
+
+			El ajuste optimizado:
+			Core 0 P0
+			Core 1 P0
+			Core 2 P0
+			Core 3 P2
+			con el consumo de energia es de 0.544 Wh
+
+			La mejora obtenida = 0.051 Wh
+
+			Tiempos optimizados:
+			Hebra 0 - 7.79 s - P0
+			Hebra 1 - 15.58 s - P0
+			Hebra 2 - 54.52 s - P0
+			Hebra 3 - 73.80 s - P2
